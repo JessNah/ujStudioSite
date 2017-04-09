@@ -31,8 +31,10 @@ if(played()==0){
 	                if (c.indexOf("played=") == 0) return 1;
 	        }
 	        var date = new Date();
-	        var days = 7;
-	        date.setTime(date.getTime()+(days*24*60*60*1000));
+	        /*var days = 7;
+	        date.setTime(date.getTime()+(days*24*60*60*1000));*/
+					var days = 1;
+					date.setTime(date.getTime()+(1*1*60*60*1000));
 	        document.cookie = "played=1"+"; expires="+date.toGMTString()+"; path=/";
 	        return 0;
 	}
