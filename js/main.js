@@ -3,17 +3,19 @@ jQuery(function($) {
 	//Preloader
 	var preloader = $('.preloader');
 
+if(played()==0){
 	document.getElementById('myvideo').addEventListener('ended',myHandler,false);
     function myHandler(e) {
 			var delayMillis = 1500; //1 second
-			if(played()==0){
 				console.log("first time");
 				setTimeout(function(){ preloader.remove(); setTimeout(function(){ document.getElementById("header").style.backgroundImage = "url('images/header_anm.gif')"; document.getElementById("myLogo").className  = "logo pull-left animated pulse"; },500);},delayMillis);
 				}
-			else{
-				console.log("NOT first time");
-				setTimeout(function(){ preloader.remove(); setTimeout(function(){ document.getElementById("header").style.backgroundImage = "url('images/header_anm.gif')"; document.getElementById("myLogo").className  = "logo pull-left animated pulse"; },500);},0);
 		}
+	else{
+				console.log("not first time");
+				preloader.remove();
+				setTimeout(function(){ document.getElementById("header").style.backgroundImage = "url('images/header_anm.gif')"; document.getElementById("myLogo").className  = "logo pull-left animated pulse"; },500);
+
         //setTimeout(function(){ preloader.remove(); setTimeout(function(){ document.getElementById("header").style.backgroundImage = "url('images/header_anm.gif')"; document.getElementById("myLogo").className  = "logo pull-left animated pulse"; },500);},delayMillis);
     }/*
 	$(window).load(function(){
