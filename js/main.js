@@ -3,7 +3,7 @@ jQuery(function($) {
 	//Preloader
 	var preloader = $('.preloader');
 
-if(played()==0){
+if(played()==0 && !isMobile.any()){
 	document.getElementById('myvideo').addEventListener('ended',myHandler,false);
     function myHandler(e) {
 			var delayMillis = 1500; //1 second
@@ -12,6 +12,9 @@ if(played()==0){
 				}
 		}
 	else{
+		if(isMobile.any()){
+			console.log("mobile device");
+		}
 				console.log("not first time");
 				preloader.remove();
 				setTimeout(function(){ document.getElementById("header").style.backgroundImage = "url('images/header_anm.gif')"; document.getElementById("myLogo").className  = "logo pull-left animated pulse"; },500);
