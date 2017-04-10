@@ -24,9 +24,9 @@ jQuery(function($) {
     }
 };
 
-	var video = document.getElementById('myvideo');
-	video.play();
+
 if(played()==0 && !isMobile.any()){
+	var video = document.getElementById('myvideo').src="images/Glitch_Zoom.mp4";
 	document.getElementById('myvideo').addEventListener('ended',myHandler,false);
     function myHandler(e) {
 			var delayMillis = 1500; //1 second
