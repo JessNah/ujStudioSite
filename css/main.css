@@ -164,6 +164,8 @@ a:hover {
   display: table;
 }
 
+
+
 #header .container-inner {
   display: table-cell;
   vertical-align: middle;
@@ -282,6 +284,8 @@ a:hover {
   padding-bottom: 100px;
 }
 
+
+
 .vertical-middle {
   height: 100%;
   width: 100%;
@@ -290,7 +294,7 @@ a:hover {
 
 .vertical-middle > div {
   display: table-cell;
-  vertical-align: middle;
+  vertical-align: top; /*used to say middle //debug// */
 }
 
 

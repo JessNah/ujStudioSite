@@ -1,5 +1,7 @@
 jQuery(function($) {
 
+	$('.carousel').bcSwipe({ threshold: 50 });
+
 	//Preloader
 	var preloader = $('.preloader');
 
