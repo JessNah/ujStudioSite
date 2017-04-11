@@ -197,10 +197,18 @@ a:hover {
 }
 
 .main-nav {
+  margin-top:100px;
   background-color: #1c1626;
-  width: 400px;;
+  width: 400px;
   display: inline-block;
   position: relative;
+}
+
+@media screen and (max-width: 540px) {
+    .main-nav  {
+        width: 80%;
+        margin-top:10%;
+    }
 }
 
 .main-nav ul {

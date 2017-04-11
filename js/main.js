@@ -42,7 +42,8 @@ if(played()==0 && !isMobile.any()){
 		}
 				console.log("not first time");
 				preloader.remove();
-				setTimeout(function(){ document.getElementById("header").style.backgroundImage = "url('images/header_anm.gif')"; document.getElementById("myLogo").className  = "logo pull-left animated pulse"; },500);
+				//This used to cause the top header animations on mobile
+				//setTimeout(function(){ document.getElementById("header").style.backgroundImage = "url('images/header_anm.gif')"; document.getElementById("myLogo").className  = "logo pull-left animated pulse"; },500);
 
         //setTimeout(function(){ preloader.remove(); setTimeout(function(){ document.getElementById("header").style.backgroundImage = "url('images/header_anm.gif')"; document.getElementById("myLogo").className  = "logo pull-left animated pulse"; },500);},delayMillis);
     }/*
