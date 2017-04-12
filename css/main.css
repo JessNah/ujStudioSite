@@ -256,8 +256,14 @@ a:hover {
   color: #000;
 }
 
-.menu{
+.menuRight{
 
+}
+
+@media screen and (max-width: 540px) {
+    #header .nav-button {
+      font-size: 1em !important;
+    }
 }
 
 /*************************
@@ -468,4 +474,9 @@ textarea.form-control {
 
 .form-control:-ms-input-placeholder {
  color: rgba(255,255,255,.8);
+}
+
+
+.page-header{
+  animation-delay: 0.4s;
 }

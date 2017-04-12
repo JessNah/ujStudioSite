@@ -181,6 +181,49 @@ if(played()==0 && !isMobile.any()){
 	}
 
 
+
+
+function doAnimations(elems) {
+  var animEndEv = 'webkitAnimationEnd animationend';
+
+  elems.each(function () {
+    var $this = $(this),
+        $animationType = $this.data('animation');
+
+    // Add animate.css classes to
+    // the elements to be animated
+    // Remove animate.css classes
+    // once the animation event has ended
+    $this.addClass($animationType).one(animEndEv, function () {
+      $this.removeClass($animationType);
+    });
+  });
+}
+
+// Select the elements to be animated
+// in the first slide on page load
+var $firstAnimatingElems = $("#page-slider").find('.item:first')
+                           .find('[data-animation ^= "animated"]');
+
+// Apply the animation using our function
+doAnimations($firstAnimatingElems);
+
+// Pause the carousel
+	$("#page-slider").carousel('pause');
+
+// Attach our doAnimations() function to the
+// carousel's slide.bs.carousel event
+	$("#page-slider").on('slide.bs.carousel', function (e) {
+  // Select the elements to be animated inside the active slide
+  var $animatingElems = $(e.relatedTarget)
+                        .find("[data-animation ^= 'animated']");
+  doAnimations($animatingElems);
+});
+
+
+
+
+
 	//color background
 
 	/*
