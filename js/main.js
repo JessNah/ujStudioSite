@@ -52,6 +52,17 @@ if(played()==0 && !isMobile.any()){
 	});*/
 
 
+//remove shadow from mobile version for mobile
+	if(isMobile.any()){
+		$('head').append('<style>.card:after{box-shadow: none !important;}</style>');
+		//remove text from menu if need be.
+		if(screen.width < 370){
+			document.getElementById("menuNavi").innerHTML = "<i class=\"fa fa-align-justify\"></i>";
+		}
+	}
+
+
+
 	function played(){
 	        var ca = document.cookie.split(';');
 	        for(var i=0; i<ca.length; i++) {
@@ -224,6 +235,8 @@ doAnimations($firstAnimatingElems);
 		//clearTimeout(timer2);
 		//clearInterval(int1);
   // Select the elements to be animated inside the active slide
+
+
   var $animatingElems = $(e.relatedTarget)
                         .find("[data-animation ^= 'animated']");
 
