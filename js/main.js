@@ -355,8 +355,11 @@ var card = $(".card");
 
 $(document).on("mousemove",function(e) {
 	if(!isMobile.any()){
-  var ax = -($(window).innerWidth()/2- e.pageX)/20;
-  var ay = ($(window).innerHeight()/2- e.pageY)/10;
+		//Original
+  //var ax = -($(window).innerWidth()/2- e.pageX)/20;
+  //var ay = ($(window).innerHeight()/2- e.pageY)/10;
+	var ax = -($(window).innerWidth()/2- e.pageX)/50;
+  var ay = ($(window).innerHeight()/2- e.pageY)/25;
   card.attr("style", "transform: rotateY("+ax+"deg) rotateX("+ay+"deg);-webkit-transform: rotateY("+ax+"deg) rotateX("+ay+"deg);-moz-transform: rotateY("+ax+"deg) rotateX("+ay+"deg)");
 }
 });
